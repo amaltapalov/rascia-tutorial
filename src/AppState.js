@@ -1,38 +1,8 @@
 import React, { Component } from "react";
 import TableState from "./TableState";
+import Form from "./Form";
 
 class AppState extends Component {
-	state = {
-		characters: [
-			{
-				name: "Charlie",
-				job: "Janitor"
-			},
-			{
-				name: "Mac",
-				job: "Bouncer"
-			},
-			{
-				name: "Dee",
-				job: "Aspring actress"
-			},
-			{
-				name: "Dennis",
-				job: "Bartender"
-			}
-		]
-	};
-
-	removeCharacter = index => {
-		// const { characters } = this.state;
-
-		this.setState({
-			characters: this.state.characters.filter((character, i) => {
-				return i !== index;
-			})
-		});
-	};
-
 	render() {
 		// const { characters } = this.state;
 		return (
@@ -41,6 +11,7 @@ class AppState extends Component {
 					characterData={this.state.characters}
 					removeCharacter={this.removeCharacter}
 				/>
+				<Form />
 			</div>
 		);
 	}

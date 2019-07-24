@@ -19,6 +19,11 @@ class Form extends Component {
 		});
 	};
 
+	submitForm = () => {
+		this.props.handleSubmit(this.state);
+		this.setState(this.initialState);
+	};
+
 	render() {
 		return (
 			<form>
@@ -36,6 +41,7 @@ class Form extends Component {
 					value={this.state.job}
 					onChange={this.handleChange}
 				/>
+				<input type="button" value="submit" onClick={this.submitForm} />
 			</form>
 		);
 	}
